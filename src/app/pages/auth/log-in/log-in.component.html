@@ -1,1 +1,33 @@
-<p>log-in works!</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="form__container border p-4 rounded shadow-sm bg-white">
+      <h1 class="text-center mb-4">Log In</h1>
+      <form [formGroup]="form" (ngSubmit)="logIn()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" />
+          <div class="form-text text-danger">
+            <!-- Aquí iría el mensaje de error -->
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Enter your password</label>
+          <div class="input-group">
+            <input type="{{ hide ? 'password' : 'text' }}" class="form-control" id="password"
+              formControlName="password" />
+            <button type="button" class="btn btn-outline-secondary" (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary w-100">Log In</button>
+        </div>
+      </form>
+      <hr />
+      <p class="text-center mt-3 small">
+        Don’t have an account yet?
+        <a routerLink="/auth/sing-up" class="text-decoration-underline">Sign up</a>
+      </p>
+    </div>
+  </div>

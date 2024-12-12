@@ -1,0 +1,94 @@
+/* Estilos principales para el contenedor del formulario */
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .form__container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--background-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+  }
+  
+  /* Espaciado y diseño para los campos del formulario */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  input[matInput] {
+    background: #f9f9f9;
+    border-radius: 4px;
+    padding: 8px;
+  }
+  
+  button[mat-icon-button] {
+    color: var(--primary-color);
+  }
+  
+  /* Botón de envío estilizado */
+  button[mat-flat-button] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background: var(--accent-color);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  button[mat-flat-button]:hover {
+    background-color: #e91e63; /* Versión más oscura del color de acento */
+  }
+  
+  /* Estilo para el separador y texto adicional */
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+  }
+  
+  .small-text {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+  }
+  
+  .small-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .small-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Opcional: Adaptaciones para pantallas pequeñas */
+  @media (max-width: 600px) {
+    .form__container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    button[mat-flat-button] {
+      font-size: 14px;
+    }
+  }

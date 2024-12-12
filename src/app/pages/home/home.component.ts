@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(){}
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+
+  logOut(): void{
+
   }
 
 }

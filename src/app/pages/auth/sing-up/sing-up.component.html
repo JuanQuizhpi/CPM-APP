@@ -1,1 +1,44 @@
-<p>sing-up works!</p>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="form__container border p-4 rounded shadow-sm bg-white">
+    <h1 class="text-center mb-4">Sign up</h1>
+    <form [formGroup]="form" (ngSubmit)="singUp()">
+      <div class="mb-3">
+        <label for="names" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="names" formControlName="names" />
+        <div class="form-text text-danger">
+          <!-- Aquí iría el mensaje de error -->
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" />
+        <div class="form-text text-danger">
+          <!-- Aquí iría el mensaje de error -->
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Enter your password</label>
+        <div class="input-group">
+          <input type="{{ hide ? 'password' : 'text' }}" class="form-control" id="password"
+            formControlName="password" />
+          <button type="button" class="btn btn-outline-secondary" (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary w-100">Sign up</button>
+      </div>
+    </form>
+    <hr />
+    <p class="text-center mt-3 small">
+      Already have an account?
+      <a routerLink="/auth/log-in" class="text-decoration-underline">Log in</a>
+    </p>
+  </div>
+</div>
